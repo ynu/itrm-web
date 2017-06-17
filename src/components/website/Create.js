@@ -1,6 +1,31 @@
 import React from 'react';
 import { Create, EditButton, DisabledInput, BooleanInput, LongTextInput, ReferenceInput, SelectInput, SimpleForm, TextInput, TabbedForm, FormTab, DateInput  } from 'admin-on-rest';
 
+const SelectOrDefaultInput = (props) => {
+    const { choices, input, ...other } = props;
+    if (choices.length === 1) {
+        const props2 = {
+            ...other,
+            input: {
+                ...input,
+                value: props.choices[0][props.optionText],
+            }
+        };
+        return <DisabledInput {...props2} />
+    } else return <SelectInput {...props} />
+};
+
+const TestInput = (props) => {
+    console.log('TestInput', props);
+    const props2 = {
+        ...props,
+        input: {
+            ...props.input,
+            value: props.choices.length > 0 ? props.choices[0].name : '',
+        }
+    }
+    return <DisabledInput {...props2} />
+}
 export default (props) => (
     <Create {...props} title="添加网站或应用系统" >
         <TabbedForm>
@@ -13,7 +38,7 @@ export default (props) => (
                     { id: 2, name: '应用系统' },
                 ]} />
                 <ReferenceInput label="所属部门" source="dept.id" reference="departments" allowEmpty>
-                    <SelectInput optionText="name" />
+                    <SelectOrDefaultInput optionText="name" />
                 </ReferenceInput>
                 <DateInput source="kbrq" label="开办日期" />
                 <LongTextInput source="yt" label="用途" />
