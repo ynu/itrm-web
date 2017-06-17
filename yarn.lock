@@ -164,6 +164,10 @@ anymatch@^1.3.0:
     arrify "^1.0.0"
     micromatch "^2.1.5"
 
+aor-language-chinese@^1.0.3:
+  version "1.0.3"
+  resolved "http://registry.npm.taobao.org/aor-language-chinese/download/aor-language-chinese-1.0.3.tgz#72594b57f3ac248ad608fbd677bf5f05399fbfca"
+
 append-transform@^0.4.0:
   version "0.4.0"
   resolved "http://registry.npm.taobao.org/append-transform/download/append-transform-0.4.0.tgz#d76ebf8ca94d276e247a36bad44a4b74ab611991"
