@@ -1,5 +1,5 @@
 import React from 'react';
-import { List, Datagrid, TextField, ChipField, ReferenceField, ReferenceArrayField, EditButton } from 'admin-on-rest';
+import { List, Datagrid, TextField, ChipField, ReferenceField, ReferenceArrayField, EditButton, DeleteButton } from 'admin-on-rest';
 
 export default (props) => (
     <List {...props} title="主管单位" >
@@ -8,6 +8,7 @@ export default (props) => (
             <ChipField source="zyfzr.name" label="主要负责人" />
             <ChipField source="bmscy.name" label="保密审查员" />
             <EditButton />
+            <DeleteButton />
         </Datagrid>
     </List>
 );

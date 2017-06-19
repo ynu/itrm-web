@@ -18,10 +18,21 @@ const App = () => (
         title="云南大学IT资源管理系统">
       
       <Resource name="departments" options={{ label: '主管单位' }}
-        list={Department.List} create={Department.Create} edit={Department.Edit}
+        list={Department.List} create={Department.Create} edit={Department.Edit} remove={Delete}
       />
-        <Resource name="websites" list={WebSite.List} create={WebSite.Create} edit={WebSite.Edit} remove={Delete} options={{ label: '网站及应用系统' }} />
+        <Resource name="websites" options={{ label: '网站及应用系统' }}
+          list={WebSite.List} create={WebSite.Create} edit={WebSite.Edit} remove={Delete} show={WebSite.Show}
+        />
         <Resource name="persons" />
+        <Resource name="wechatOfficialAccounts" options={{ label: '微信公众号' }}
+          list={Wechat.List} create={Wechat.Create} edit={Wechat.Edit} remove={Delete}
+        />
+        <Resource name="weiboAccounts" options={{ label: '微博账号' }}
+          list={Weibo.List} create={Weibo.Create} edit={Weibo.Edit} remove={Delete}
+        />
+        <Resource name="emails" options={{ label: '公共电子邮箱' }}
+          list={Email.List} create={Email.Create} edit={Email.Edit} remove={Delete}
+        />
     </Admin>
 );
 
