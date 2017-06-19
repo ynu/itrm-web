@@ -1,7 +1,7 @@
 import React from 'react';
 import { jsonServerRestClient, simpleRestClient, Admin, Resource, Delete } from 'admin-on-rest';
 import chineseMessages from 'aor-language-chinese';
-import { WebSite, Department } from './components';
+import { WebSite, Department, Wechat, Weibo, Email, Dashboard } from './components';
 import authClient from './authClient';
 // import Login from './Login';
 import Layout from './Layout';
