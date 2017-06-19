@@ -5,8 +5,18 @@
   "dependencies": {
     "admin-on-rest": "^1.1.1",
     "aor-language-chinese": "^1.0.3",
+    "aor-rich-text-input": "^1.0.0",
+    "es6-promise": "^4.1.0",
+    "isomorphic-fetch": "^2.2.1",
+    "material-ui": "~0.17.4",
+    "prop-types": "~15.5.7",
     "react": "^15.6.1",
-    "react-dom": "^15.6.1"
+    "react-dom": "^15.6.1",
+    "react-redux": "~5.0.4",
+    "react-router-dom": "~4.1.0",
+    "react-tap-event-plugin": "~2.0.1",
+    "redux-form": "~6.6.2",
+    "redux-saga": "~0.14.6"
   },
   "devDependencies": {
     "react-scripts": "1.0.7"
