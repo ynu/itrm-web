@@ -1,4 +1,9 @@
-import { simpleRestClient } from 'admin-on-rest';
+import { simpleRestClient, fetchUtils } from 'admin-on-rest';
 import {apiHost} from './config';
 
-export default simpleRestClient(apiHost);
+const httpClient = (url, options = {}) => {
+    options.credentials = 'include';
+    return fetchUtils.fetchJson(url, options);
+}
+
+export default simpleRestClient(apiHost, httpClient);
