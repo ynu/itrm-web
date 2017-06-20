@@ -5,13 +5,14 @@ import { WebSite, Department, Wechat, Weibo, Email, Dashboard } from './componen
 import authClient from './authClient';
 // import Login from './Login';
 import Layout from './Layout';
+import restClient from './restClient';
 
 const messages = {
   cn: chineseMessages,
 }
 const App = () => (
     <Admin
-      restClient={simpleRestClient('http://localhost:4000')}
+      restClient={restClient}
       locale="cn"
       messages={messages}
       authClient={authClient}
