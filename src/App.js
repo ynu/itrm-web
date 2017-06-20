@@ -11,11 +11,14 @@ const messages = {
 }
 const App = () => (
     <Admin
-        restClient={simpleRestClient('http://localhost:4000')}
-        locale="cn"
-        messages={messages}
-        authClient={authClient}
-        title="云南大学IT资源管理系统">
+      restClient={simpleRestClient('http://localhost:4000')}
+      locale="cn"
+      messages={messages}
+      authClient={authClient}
+      title="云南大学IT资源管理系统"
+      dashboard={Dashboard}
+    >
+
       
       <Resource name="departments" options={{ label: '主管单位' }}
         list={Department.List} create={Department.Create} edit={Department.Edit} remove={Delete}

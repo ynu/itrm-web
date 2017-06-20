@@ -1,24 +1,22 @@
 import {AUTH_LOGIN, AUTH_LOGOUT, AUTH_CHECK, AUTH_ERROR} from 'admin-on-rest';
 import fetch from 'isomorphic-fetch';
+import { apiHost } from './config';
 
 export default async (type, params) => {
     if (type === AUTH_LOGIN) {
-        console.info("AUTH_LOGIN");
-        window.location = "http://api-for-client.itrm.ynu.edu.cn:4000/auth?redirect_uri=http://itrs-web.itrm.ynu.edu.cn:3000/";
-        //return Promise.resolve();
     }
     if (type === AUTH_LOGOUT) {
         console.info("AUTH_LOGOUT");
-        window.location = "http://api-for-client.itrm.ynu.edu.cn:4000/auth?redirect_uri=http://itrs-web.itrm.ynu.edu.cn:3000/";
-        return Promise.resolve();
+        window.location = apiHost + '/auth?redirect_uri='+encodeURIComponent(window.location.href);
     }
     if (type === AUTH_ERROR) {
         console.info("AUTH_ERROR");
         return Promise.resolve();
     }
     if (type === AUTH_CHECK) {
+        console.log('AUTH_CHECK');
         try {
-            const response = await fetch('http://api-for-client.itrm.ynu.edu.cn:4000/auth/user', {
+            const response = await fetch(apiHost + '/auth/user', {
                 method: 'GET',
                 credentials: 'include'
             });
@@ -30,7 +28,8 @@ export default async (type, params) => {
             return data.username != null ? Promise.resolve() : Promise.reject();
         }
         catch (e) {
-            console.error(e);
+            alert('系统错误：登录API调用失败，请与系统管理员联系');
+            return Promise.resolve();
         }
 
     }
