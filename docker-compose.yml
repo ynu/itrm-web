@@ -1,0 +1,8 @@
+version: '2'
+services:
+  itrm-web:
+    build: .
+    ports:
+      - "50061:3000"
+    restart: always
+
