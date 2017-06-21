@@ -6,6 +6,7 @@ import authClient from './authClient';
 // import Login from './Login';
 import Layout from './Layout';
 import restClient from './restClient';
+import LogoutButton from './components/LogoutButton';
 
 const messages = {
   cn: chineseMessages,
@@ -17,6 +18,7 @@ const App = () => (
       messages={messages}
       authClient={authClient}
       title="云南大学IT资源管理系统"
+      logoutButton={LogoutButton}
       dashboard={Dashboard}
     >
 
