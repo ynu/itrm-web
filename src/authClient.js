@@ -7,7 +7,11 @@ export default async (type, params) => {
     }
     if (type === AUTH_LOGOUT) {
         console.info("AUTH_LOGOUT");
-        window.location = apiHost + '/auth?redirect_uri='+encodeURIComponent(window.location.href);
+        const randomHash = Math.round(Math.random() * 1000);
+        const authUrl = `${apiHost}/auth?redirect_uri=${encodeURIComponent(window.location.href)}&hash=${randomHash}`;
+        console.info(`redirect to auth url ${authUrl}`);
+        window.location.href = authUrl;
+        return false;
     }
     if (type === AUTH_ERROR) {
         console.info("AUTH_ERROR");
@@ -16,7 +20,8 @@ export default async (type, params) => {
     if (type === AUTH_CHECK) {
         console.log('AUTH_CHECK');
         try {
-            const response = await fetch(apiHost + '/auth/user', {
+            const randomHash = Math.round(Math.random() * 1000);
+            const response = await fetch(`${apiHost}/auth/user?hash=${randomHash}`, {
                 method: 'GET',
                 credentials: 'include'
             });
