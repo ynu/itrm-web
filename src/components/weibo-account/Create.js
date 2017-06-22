@@ -1,5 +1,5 @@
 import React from 'react';
-import { Create, EditButton, ReferenceInput, DateInput, BooleanInput, required, NumberInput, TextInput, TabbedForm, FormTab } from 'admin-on-rest';
+import { Create, EditButton, ReferenceInput, DateInput, BooleanInput, required, NumberInput, TextInput, TabbedForm, FormTab, SelectInput } from 'admin-on-rest';
 import SelectOrDefaultInput from '../SelectOrDefaultInput';
 
 export default (props) => (
@@ -9,9 +9,9 @@ export default (props) => (
                 <TextInput source="name" label="名称" validate={[ required ]} />
                 <TextInput source="account" label="账号" validate={[ required ]} />
                 <TextInput source="url" label="微博地址" validate={[ required ]} />
-                <ReferenceInput label="所属部门" source="dept.id" reference="departments" allowEmpty>
-                    <SelectOrDefaultInput optionText="name" validate={[ required ]} />
-                </ReferenceInput>
+                <ReferenceInput label="所属部门" source="dept.id" reference="zzjg" allowEmpty>
+                      <SelectInput optionText="name" />
+                  </ReferenceInput>
                 <DateInput source="kbrq" label="开办日期" validate={[ required ]} />
             </FormTab>
             <FormTab label="管理员">

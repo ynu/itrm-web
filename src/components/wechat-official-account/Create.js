@@ -8,9 +8,9 @@ export default (props) => (
             <FormTab label="基本信息">
                 <TextInput source="name" label="名称" validate={[ required ]} />
                 <TextInput source="account" label="微信号" validate={[ required ]} />
-                <ReferenceInput label="所属部门" source="dept.id" reference="departments" allowEmpty>
-                    <SelectOrDefaultInput optionText="name" validate={[ required ]} />
-                </ReferenceInput>
+                <ReferenceInput label="所属部门" source="dept.id" reference="zzjg" allowEmpty>
+                      <SelectInput optionText="name" />
+                  </ReferenceInput>
                 <SelectInput source="type" label="类型" optionText="id" choices={[
                     { id: '订阅号' },
                     { id: '服务号' },
