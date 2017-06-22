@@ -7,7 +7,6 @@ export default (props) => (
         <Datagrid>
             <TextField source="domain" label="域名" />
             <TextField source="name" label="名称" />
-            <EditButton />
             <DeleteButton />
         </Datagrid>
     </List>

@@ -5,6 +5,7 @@ export const Weibo = require('./weibo-account').default;
 export const Email = require('./email').default;
 export const Dashboard = require('./dashboard').default;
 export const Aqzr = require('./aqzr').default;
+export const RedirectToList = require('./RedirectToList').default;
 
 export default {
     WebSite,
@@ -14,4 +15,5 @@ export default {
     Email,
     Dashboard,
     Aqzr,
+    RedirectToList,
 }

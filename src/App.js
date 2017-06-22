@@ -8,7 +8,7 @@ import WebsiteIcon from 'material-ui/svg-icons/av/web';
 import DepartmentIcon from 'material-ui/svg-icons/social/people';
 import AqzrIcon from 'material-ui/svg-icons/action/assignment';
 
-import { WebSite, Department, Wechat, Weibo, Email, Dashboard, Aqzr } from './components';
+import { WebSite, Department, Wechat, Weibo, Email, Dashboard, Aqzr, RedirectToList } from './components';
 import authClient from './authClient';
 // import Login from './Login';
 import Layout from './Layout';
@@ -32,28 +32,28 @@ const App = () => (
       
       <Resource name="departments" options={{ label: '主管单位' }}
         icon={DepartmentIcon}
-        list={Department.List} create={Department.Create} edit={Department.Edit} remove={Delete}
+        list={Department.List} create={Department.Create} edit={RedirectToList} remove={Delete}
       />
         <Resource name="websites" options={{ label: '网站及应用系统' }}
           icon={WebsiteIcon}
-          list={WebSite.List} create={WebSite.Create} edit={WebSite.Edit} remove={Delete} show={WebSite.Show}
+          list={WebSite.List} create={WebSite.Create} edit={RedirectToList} remove={Delete} show={WebSite.Show}
         />
         
         <Resource name="wechatOfficialAccounts" options={{ label: '微信公众号' }}
           icon={WechatOAIcon}
-          list={Wechat.List} create={Wechat.Create} edit={Wechat.Edit} remove={Delete}
+          list={Wechat.List} create={Wechat.Create} edit={RedirectToList} remove={Delete}
         />
         <Resource name="weiboAccounts" options={{ label: '微博账号' }}
           icon={WeiboIcon}
-          list={Weibo.List} create={Weibo.Create} edit={Weibo.Edit} remove={Delete}
+          list={Weibo.List} create={Weibo.Create} edit={RedirectToList} remove={Delete}
         />
         <Resource name="emails" options={{ label: '公共电子邮箱' }}
           icon={EmailIcon}
-          list={Email.List} create={Email.Create} edit={Email.Edit} remove={Delete}
+          list={Email.List} create={Email.Create} edit={RedirectToList} remove={Delete}
         />
         <Resource name="aqzr" options={{ label: '安全责任书' }}
           icon={AqzrIcon}
-          list={Aqzr.List} create={Aqzr.Create} remove={Delete}
+          list={Aqzr.List} create={Aqzr.Create} remove={Delete} edit={RedirectToList}
         />
         <Resource name="persons" />
         <Resource name="zzjg" />
