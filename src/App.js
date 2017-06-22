@@ -38,7 +38,7 @@ const App = () => (
           icon={WebsiteIcon}
           list={WebSite.List} create={WebSite.Create} edit={WebSite.Edit} remove={Delete} show={WebSite.Show}
         />
-        <Resource name="persons" />
+        
         <Resource name="wechatOfficialAccounts" options={{ label: '微信公众号' }}
           icon={WechatOAIcon}
           list={Wechat.List} create={Wechat.Create} edit={Wechat.Edit} remove={Delete}
@@ -55,6 +55,8 @@ const App = () => (
           icon={AqzrIcon}
           list={Aqzr.List} create={Aqzr.Create} remove={Delete}
         />
+        <Resource name="persons" />
+        <Resource name="zzjg" />
     </Admin>
 );
 

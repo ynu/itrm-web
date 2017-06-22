@@ -8,7 +8,7 @@ import FlatButton from 'material-ui/FlatButton';
 import { translate } from 'admin-on-rest';
 
 const style= {
-    'margin-bottom': '10px',
+    marginBottom: '10px',
 }
 export default () => (
     <Card style={style}>
