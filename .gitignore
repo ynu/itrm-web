@@ -23,3 +23,6 @@ yarn-error.log*
 .idea
 package-lock.json
 .vscode
+
+# https://docs.docker.com/compose/environment-variables/#the-env-file
+.env
