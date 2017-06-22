@@ -1,0 +1,5 @@
+# node dependences
+node_modules
+
+# git repository files
+.git
