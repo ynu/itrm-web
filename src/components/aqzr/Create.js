@@ -3,7 +3,7 @@ import { Create, required, SelectInput, DisabledInput, BooleanInput, ReferenceIn
 import { connect } from 'react-redux';
 import { change, formValueSelector } from 'redux-form';
 // import { Card, CardHeader, CardTitle, CardText } from 'material-ui/Card';
-import SelectOrDefaultInput from '../SelectOrDefaultInput';
+// import SelectOrDefaultInput from '../SelectOrDefaultInput';
 
 class AqzrCreate extends Component {
     state = {
@@ -11,7 +11,6 @@ class AqzrCreate extends Component {
     }
     componentDidMount() {
       const { change } = this.props;
-      change('record-form', 'test', 'test2');
       change('record-form', 'pre_jcjg.wgxx.sfy', false);
     }
     render() {
