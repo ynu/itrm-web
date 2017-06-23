@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import { Create, EditButton, DisabledInput, NumberInput, required, BooleanInput, LongTextInput, ReferenceInput, SelectInput, SimpleForm, TextInput, TabbedForm, FormTab, DateInput  } from 'admin-on-rest';
+import { Create, regex, DisabledInput, NumberInput, required, BooleanInput, LongTextInput, ReferenceInput, SelectInput, SimpleForm, TextInput, TabbedForm, FormTab, DateInput  } from 'admin-on-rest';
 import { connect } from 'react-redux';
 import { change, formValueSelector } from 'redux-form';
 import SelectOrDefaultInput from '../SelectOrDefaultInput';
 
+const urlRegex = regex(/^http(s?):\/\//, '地址必须以http://或https://开头');
 class WebsiteCreate extends Component {
     state = {  }
     
@@ -19,7 +20,7 @@ class WebsiteCreate extends Component {
             <FormTab label="基本信息">
                 <TextInput source="name" label="网站名称" validate={[ required ]} />
                 <TextInput source="domain" label="域名" validate={[ required ]}/>
-                <TextInput source="mainPageUrl" label="首页地址" />
+                <TextInput source="mainPageUrl" label="首页地址" validate={[ required, urlRegex ]} />
                 <SelectInput source="category" label="类型" choices={[
                     { id: 1, name: '门户网站' },
                     { id: 2, name: '应用系统' },
@@ -34,7 +35,7 @@ class WebsiteCreate extends Component {
             <FormTab label="管理员">
                 <TextInput source="manager.name" label="姓名" validate={[ required ]} />
                 <TextInput source="manager.id" label="一卡通号" validate={[ required ]} />                            
-                <NumberInput source="manager.phone" label="手机号" validate={[ required ]} />                
+                <TextInput source="manager.phone" label="手机号" validate={[ required ]} />                
             </FormTab>
             <FormTab label="英文版" >
                 <BooleanInput source="hasEnglishVersion" label="是否有英文版网站" />

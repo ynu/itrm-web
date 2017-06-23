@@ -36,7 +36,7 @@ const App = () => (
       />
         <Resource name="websites" options={{ label: '网站及应用系统' }}
           icon={WebsiteIcon}
-          list={WebSite.List} create={WebSite.Create} edit={RedirectToList} remove={Delete} show={WebSite.Show}
+          list={WebSite.List} create={WebSite.Create} remove={Delete} edit={RedirectToList}
         />
         
         <Resource name="wechatOfficialAccounts" options={{ label: '微信公众号' }}
