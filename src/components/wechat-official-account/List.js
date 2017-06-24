@@ -7,7 +7,6 @@ export default (props) => (
             <TextField source="name" label="名称" />
             <ChipField source="manager.name" label="管理员" />
             <BooleanField source="certification.yrz" label="是否认证" />
-            <EditButton />
             <DeleteButton />
         </Datagrid>
     </List>
