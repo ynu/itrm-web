@@ -14,6 +14,7 @@ import authClient from './authClient';
 import Layout from './Layout';
 import restClient from './restClient';
 import LogoutButton from './components/LogoutButton';
+import Login from './Login';
 
 const messages = {
   cn: chineseMessages,
@@ -27,6 +28,7 @@ const App = () => (
       title="云南大学IT资源管理系统"
       logoutButton={LogoutButton}
       dashboard={Dashboard}
+      loginPage={Login}
     >
 
       
