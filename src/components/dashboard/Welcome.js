@@ -14,8 +14,8 @@ export default translate(({ style, translate }) => (
             subtitle={translate('在使用系统申请、填报IT资源之前，您需要先填写本单位相关信息。')}
             avatar={<Avatar backgroundColor="#FFEB3B" icon={<LightBulbIcon />} />}
         />
-        <CardActions style={{ textAlign: 'right' }}>
+        {/*<CardActions style={{ textAlign: 'right' }}>
             <FlatButton label={translate('添加单位信息')} icon={<HomeIcon />} href="https://marmelab.com/admin-on-rest/" />
-        </CardActions>
+        </CardActions>*/}
     </Card>
 ));
