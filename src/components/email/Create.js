@@ -1,6 +1,5 @@
 import React from 'react';
-import { Create, EditButton, required, ReferenceInput, SelectInput, DateInput, email, NumberInput, TextInput, TabbedForm, FormTab } from 'admin-on-rest';
-import SelectOrDefaultInput from '../SelectOrDefaultInput';
+import { Create, required, ReferenceInput, SelectInput, DateInput, email, NumberInput, TextInput, TabbedForm, FormTab } from 'admin-on-rest';
 
 export default (props) => (
     <Create {...props} title="添加公共电子邮箱信息" >
@@ -16,7 +15,7 @@ export default (props) => (
             <FormTab label="管理员">
                 <TextInput source="manager.name" label="姓名" validate={[ required ]} />
                 <TextInput source="manager.id" label="一卡通号" validate={[ required ]} />                            
-                <NumberInput source="manager.phone" label="手机号" validate={[ required ]} />                
+                <TextInput source="manager.phone" label="手机号" validate={[ required ]} />                
             </FormTab>
         </TabbedForm>
     </Create>
