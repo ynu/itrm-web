@@ -11,15 +11,15 @@ MAINTAINER Liudonghua <liudonghua123@gmail.com>
 # RUN apt-get install -y vim
 
 # http://www.clock.co.uk/blog/a-guide-on-how-to-cache-npm-install-with-docker
-# ADD package.json /app/package.json
+ADD package.json /app/package.json
 
 WORKDIR /app
 
-RUN npm install
-RUN npm -g i serve
-RUN npm run build
 # copy static resources to the specified location
 COPY . /app
+RUN npm install
+RUN npm run build
 
 # main application command
+RUN npm -g i serve
 CMD serve -s /app/build
