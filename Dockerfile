@@ -16,7 +16,7 @@ MAINTAINER Liudonghua <liudonghua123@gmail.com>
 WORKDIR /app
 
 RUN npm install
-RUN npm -g run serve
+RUN npm -g i serve
 RUN npm run build
 # copy static resources to the specified location
 COPY . /app
