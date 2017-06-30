@@ -36,10 +36,22 @@ class Dashboard extends React.Component {
       <div>
         {welcome}
         <div style={styles.flex}>
-          <WebsitesTotalCount value={websites.totalCount} />
-          <WechatOATotalCount value={wechatOfficialAccounts.totalCount} />
-          <WeiboAccountsTotalCount value={weiboAccounts.totalCount} />
-          <EmailsTotalCount value={emails.totalCount} />
+          <div style={styles.leftCol}>
+            <div style={styles.flex}>
+              <WebsitesTotalCount value={websites.totalCount} />
+            </div>
+            <div style={styles.singleCol}>
+                <WechatOATotalCount value={wechatOfficialAccounts.totalCount} />
+            </div>
+          </div>
+          <div style={styles.rightCol}>
+              <div style={styles.flex}>
+                <WeiboAccountsTotalCount value={weiboAccounts.totalCount} />
+              </div>
+              <div style={styles.singleCol}>
+                <EmailsTotalCount value={emails.totalCount} />
+            </div>
+          </div>
         </div>
       </div>
       

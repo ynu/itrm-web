@@ -1,3 +1,3 @@
-export const apiHost = process.env.API_HOST || 'http://api.itrm.ynu.edu.cn';
+export const apiHost = process.env.REACT_APP_API_HOST || 'http://local.com:4000';
 
-export const logoutUrl = process.env.LOGOUT_URL || 'http://api.itrm.ynu.edu.cn/auth/logout';
+export const logoutUrl = process.env.REACT_APP_LOGOUT_URL || `${apiHost}/auth/logout`;
