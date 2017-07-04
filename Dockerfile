@@ -1,5 +1,5 @@
 # Set the base image to nginx
-FROM node:8
+FROM node:8.1.2-alpine
 
 # File Author / Maintainer
 MAINTAINER Liudonghua <liudonghua123@gmail.com>
@@ -11,15 +11,17 @@ MAINTAINER Liudonghua <liudonghua123@gmail.com>
 # RUN apt-get install -y vim
 
 # http://www.clock.co.uk/blog/a-guide-on-how-to-cache-npm-install-with-docker
-ADD package.json /app/package.json
+COPY package.json /app/package.json
+COPY . /app
 
 WORKDIR /app
 
 # copy static resources to the specified location
-COPY . /app
+
 RUN npm install
 RUN npm run build
+RUN npm -g i serve
 
 # main application command
-RUN npm -g i serve
+
 CMD serve -s /app/build

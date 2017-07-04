@@ -9,12 +9,13 @@ import DepartmentsTotalCount from './DepartmentsTotalCount';
 import WechatOATotalCount from './WechatOATotalCount';
 import WeiboAccountsTotalCount from './WeiboAccountsTotalCount';
 import EmailsTotalCount from './EmailsTotalCount';
+import CountByDept from './CountByDept';
 
 const styles = {
     card: { borderLeft: 'solid 4px #ff9800', flex: 1, marginLeft: '1em' },
     icon: { float: 'right', width: 64, height: 64, padding: 16, color: '#ff9800' },
     welcome: { marginBottom: '2em' },
-    flex: { display: 'flex' },
+    flex: { display: 'flex',marginBottom: '2em' },
     leftCol: { flex: 1, marginRight: '1em' },
     rightCol: { flex: 1, marginLeft: '1em' },
     singleCol: { marginTop: '2em' },
@@ -30,7 +31,7 @@ class Dashboard extends React.Component {
   render() {
 
     const welcome = <Welcome style={styles.welcome} />;
-    const { departments, websites, wechatOfficialAccounts, weiboAccounts, emails } = this.state;
+    const { departments, websites, wechatOfficialAccounts, weiboAccounts, emails, countByDept } = this.state;
     if (!departments) return <div>{welcome}</div>;
     return (
       <div>
@@ -52,6 +53,10 @@ class Dashboard extends React.Component {
                 <EmailsTotalCount value={emails.totalCount} />
             </div>
           </div>
+        </div>
+
+        <div style={styles.flex}>
+          <CountByDept countByDept={countByDept} />
         </div>
       </div>
       

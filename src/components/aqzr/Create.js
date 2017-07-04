@@ -18,7 +18,7 @@ class AqzrCreate extends Component {
         return (
             <Create {...this.props} title="添加安全责任书信息" >
                 <SimpleForm>
-                  <ReferenceInput label="所属部门" source="dept.id" reference="zzjg" allowEmpty>
+                  <ReferenceInput label="所属部门" source="dept.id" reference="zzjg" allowEmpty validate={[ required ]}>
                       <SelectInput optionText="name" />
                   </ReferenceInput>
                   {/*<DateInput source="zrqj.startDate" label="起始日期" validate={[ required ]} />
