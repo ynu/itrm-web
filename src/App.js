@@ -15,6 +15,7 @@ import Layout from './Layout';
 import restClient from './restClient';
 import LogoutButton from './components/LogoutButton';
 import Login from './Login';
+import { user } from './reducers/auth';
 
 const messages = {
   cn: chineseMessages,
@@ -29,9 +30,9 @@ const App = () => (
       logoutButton={LogoutButton}
       dashboard={Dashboard}
       loginPage={Login}
+      customReducers={{ user }}
     >
 
-      
       <Resource name="departments" options={{ label: '主管单位' }}
         icon={DepartmentIcon}
         list={Department.List} create={Department.Create} edit={RedirectToList} remove={Delete}
