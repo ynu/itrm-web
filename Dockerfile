@@ -18,6 +18,7 @@ WORKDIR /app
 
 # copy static resources to the specified location
 
+ENV REACT_APP_API_HOST http://api.itrm.ynu.edu.cn
 RUN npm install
 RUN npm run build
 RUN npm -g i serve
