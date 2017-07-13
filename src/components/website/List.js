@@ -1,4 +1,3 @@
-// in src/posts.js
 import React from 'react';
 import { List, Datagrid, TextField, FunctionField, ReferenceField, ChipField, EditButton, DeleteButton } from 'admin-on-rest';
 import FlatButton from 'material-ui/FlatButton';

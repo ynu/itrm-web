@@ -1,15 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { propTypes, reduxForm, Field } from 'redux-form';
+import { propTypes } from 'redux-form';
 import { connect } from 'react-redux';
-import compose from 'recompose/compose';
-
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import { Card, CardTitle } from 'material-ui/Card';
 import Avatar from 'material-ui/Avatar';
-import RaisedButton from 'material-ui/RaisedButton';
-import CircularProgress from 'material-ui/CircularProgress';
 import LockIcon from 'material-ui/svg-icons/action/lock-outline';
 import { cyan500, pinkA200 } from 'material-ui/styles/colors';
 
@@ -51,8 +47,6 @@ function getColorsFromTheme(theme) {
 
 
 class Login extends Component {
-
-    login = (auth) => this.props.userLogin(auth, this.props.location.state ? this.props.location.state.nextPathname : '/');
 
     render() {
         const { theme } = this.props;
