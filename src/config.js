@@ -32,4 +32,8 @@ export const auditStatus = {
     record.latestAuditLog
     && record.latestAuditLog.status === auditStatus.SYDW_APPROVED
   ),
+  isItcApproved: record => (
+    record.latestAuditLog
+    && record.latestAuditLog.status === auditStatus.ITC_APPROVED
+  ),
 };
