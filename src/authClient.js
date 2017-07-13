@@ -6,19 +6,15 @@ export default async (type, params) => {
     if (type === AUTH_LOGIN) {
     }
     if (type === AUTH_LOGOUT) {
-        console.info("AUTH_LOGOUT");
         const randomHash = Math.round(Math.random() * 1000);
         const authUrl = `${apiHost}/auth?redirect_uri=${encodeURIComponent(window.location.href)}&hash=${randomHash}`;
-        console.info(`redirect to auth url ${authUrl}`);
         window.location.href = authUrl;
         return false;
     }
     if (type === AUTH_ERROR) {
-        console.info("AUTH_ERROR");
         return Promise.resolve();
     }
     if (type === AUTH_CHECK) {
-        console.log('AUTH_CHECK');
         try {
             const randomHash = Math.round(Math.random() * 1000);
             const response = await fetch(`${apiHost}/auth/user?hash=${randomHash}`, {
@@ -29,7 +25,6 @@ export default async (type, params) => {
                 throw new Error("Bad response from server");
             }
             const data = await response.json();
-            console.info(data);
             return data.username != null ? Promise.resolve() : Promise.reject();
         }
         catch (e) {
