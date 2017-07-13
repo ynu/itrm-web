@@ -4,7 +4,6 @@ import { ReferenceInput, SelectInput } from 'admin-on-rest';
 class SelectDeptInput extends Component {
   state = {  }
   render() {
-    console.log(this.props.input);
     // if (!this.props.input) return <div/>;
     return (
       // <div>TESt</div>

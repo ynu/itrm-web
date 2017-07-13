@@ -1,5 +1,5 @@
 import React from 'react';
-import { simpleRestClient, Admin, Resource, Delete } from 'admin-on-rest';
+import { Admin, Resource, Delete } from 'admin-on-rest';
 import chineseMessages from 'aor-language-chinese';
 import EmailIcon from 'material-ui/svg-icons/communication/email';
 import WechatOAIcon from 'material-ui/svg-icons/av/art-track';
@@ -10,8 +10,6 @@ import AqzrIcon from 'material-ui/svg-icons/action/assignment';
 
 import { WebSite, Department, Wechat, Weibo, Email, Dashboard, Aqzr, RedirectToList } from './components';
 import authClient from './authClient';
-// import Login from './Login';
-import Layout from './Layout';
 import restClient from './restClient';
 import LogoutButton from './components/LogoutButton';
 import Login from './Login';
@@ -19,7 +17,7 @@ import { user } from './reducers/auth';
 
 const messages = {
   cn: chineseMessages,
-}
+};
 const App = () => (
     <Admin
       restClient={restClient}
@@ -36,12 +34,13 @@ const App = () => (
       <Resource name="departments" options={{ label: '使用单位' }}
         icon={DepartmentIcon}
         list={Department.List} create={Department.Create} remove={Delete} edit={Department.Edit}
+        show={Department.Show}
       />
         <Resource name="websites" options={{ label: '网站及应用系统' }}
           icon={WebsiteIcon}
           list={WebSite.List} create={WebSite.Create} remove={Delete} edit={RedirectToList}
         />
-        
+
         <Resource name="wechatOfficialAccounts" options={{ label: '微信公众号' }}
           icon={WechatOAIcon}
           list={Wechat.List} create={Wechat.Create} edit={RedirectToList} remove={Delete}
