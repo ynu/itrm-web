@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "admin-on-rest": "^1.1.1",
+    "admin-on-rest": "^1.2.0",
     "aor-language-chinese": "^1.0.3",
     "aor-rich-text-input": "^1.0.0",
     "es6-promise": "^4.1.0",
@@ -15,6 +15,7 @@
     "react-redux": "~5.0.4",
     "react-router": "^4.1.1",
     "react-router-dom": "~4.1.0",
+    "react-router-redux": "^4.0.8",
     "react-tap-event-plugin": "~2.0.1",
     "redux-form": "~6.6.2",
     "redux-saga": "~0.14.6"

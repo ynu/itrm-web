@@ -58,9 +58,9 @@ address@1.0.1, address@^1.0.1:
   version "1.0.1"
   resolved "http://registry.npm.taobao.org/address/download/address-1.0.1.tgz#363f5d3f2be26d0655d8afd5a9562e4fc2194537"
 
-admin-on-rest@^1.1.1:
-  version "1.1.1"
-  resolved "http://registry.npm.taobao.org/admin-on-rest/download/admin-on-rest-1.1.1.tgz#603698b457be0f9f0b1e45a3cb9091f11d374b6e"
+admin-on-rest@^1.2.0:
+  version "1.2.0"
+  resolved "http://registry.npm.taobao.org/admin-on-rest/download/admin-on-rest-1.2.0.tgz#a62bdbf7ac3d0eeb743557ced3ef1e233d839ad5"
   dependencies:
     babel-runtime "~6.18.0"
     inflection "~1.12.0"
@@ -84,7 +84,7 @@ admin-on-rest@^1.1.1:
     recompose "~0.23.1"
     redux "~3.6.0"
     redux-form "~6.6.3"
-    redux-saga "~0.14.6"
+    redux-saga "~0.15.0"
     reselect "~3.0.0"
 
 ajv-keywords@^1.0.0, ajv-keywords@^1.1.1:
@@ -5043,8 +5043,8 @@ react-dom@~15.5.4:
     prop-types "~15.5.7"
 
 react-dropzone@~3.13.1:
-  version "3.13.2"
-  resolved "http://registry.npm.taobao.org/react-dropzone/download/react-dropzone-3.13.2.tgz#318745c03007ca6b948cdd4431abc009b16a6588"
+  version "3.13.3"
+  resolved "http://registry.npm.taobao.org/react-dropzone/download/react-dropzone-3.13.3.tgz#b8bde4b5a12842f85196b45e8cc2959834b81962"
   dependencies:
     attr-accept "^1.0.3"
     prop-types "^15.5.7"
@@ -5089,6 +5089,10 @@ react-router-dom@~4.1.0:
     loose-envify "^1.3.1"
     prop-types "^15.5.4"
     react-router "^4.1.1"
+
+react-router-redux@^4.0.8:
+  version "4.0.8"
+  resolved "http://registry.npm.taobao.org/react-router-redux/download/react-router-redux-4.0.8.tgz#227403596b5151e182377dab835b5d45f0f8054e"
 
 react-router-redux@~5.0.0-alpha.5:
   version "5.0.0-alpha.6"
@@ -5314,6 +5318,10 @@ redux-form@~6.6.2, redux-form@~6.6.3:
 redux-saga@~0.14.6:
   version "0.14.8"
   resolved "http://registry.npm.taobao.org/redux-saga/download/redux-saga-0.14.8.tgz#ad01afabe02ec41a17df54e2e09aa236b30a7732"
+
+redux-saga@~0.15.0:
+  version "0.15.4"
+  resolved "http://registry.npm.taobao.org/redux-saga/download/redux-saga-0.15.4.tgz#27982a947280053b7ecbb5d3170c837a5fe6b261"
 
 redux@~3.6.0:
   version "3.6.0"
@@ -5547,13 +5555,13 @@ rx@^4.1.0:
   version "4.1.0"
   resolved "http://registry.npm.taobao.org/rx/download/rx-4.1.0.tgz#a5f13ff79ef3b740fe30aa803fb09f98805d4782"
 
-safe-buffer@^5.0.1, safe-buffer@^5.1.0:
-  version "5.1.0"
-  resolved "http://registry.npm.taobao.org/safe-buffer/download/safe-buffer-5.1.0.tgz#fe4c8460397f9eaaaa58e73be46273408a45e223"
-
-safe-buffer@~5.0.1:
+safe-buffer@^5.0.1, safe-buffer@~5.0.1:
   version "5.0.1"
   resolved "http://registry.npm.taobao.org/safe-buffer/download/safe-buffer-5.0.1.tgz#d263ca54696cd8a306b5ca6551e92de57918fbe7"
+
+safe-buffer@^5.1.0:
+  version "5.1.0"
+  resolved "http://registry.npm.taobao.org/safe-buffer/download/safe-buffer-5.1.0.tgz#fe4c8460397f9eaaaa58e73be46273408a45e223"
 
 sane@~1.6.0:
   version "1.6.0"

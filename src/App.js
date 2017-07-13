@@ -33,9 +33,9 @@ const App = () => (
       customReducers={{ user }}
     >
 
-      <Resource name="departments" options={{ label: '主管单位' }}
+      <Resource name="departments" options={{ label: '使用单位' }}
         icon={DepartmentIcon}
-        list={Department.List} create={Department.Create} edit={RedirectToList} remove={Delete}
+        list={Department.List} create={Department.Create} remove={Delete} edit={Department.Edit}
       />
         <Resource name="websites" options={{ label: '网站及应用系统' }}
           icon={WebsiteIcon}
