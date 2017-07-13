@@ -3,7 +3,7 @@ import { Edit, required, maxLength, minLength, TextInput, ReferenceInput, Select
 
 export default (props) => (
     <Edit {...props} title="编辑IT资源使用单位信息" >
-        <TabbedForm redirect="list">
+        <TabbedForm redirect="show">
             <FormTab label="基本信息">
                 <ReferenceInput label="单位名称" source="dept.id" reference="zzjg" allowEmpty validate={[ required ]} >
                       <SelectInput optionText="name" />

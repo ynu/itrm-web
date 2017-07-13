@@ -7,7 +7,7 @@ import FlatButton from 'material-ui/FlatButton';
 import LightBulbIcon from 'material-ui/svg-icons/action/lightbulb-outline';
 import FetchUser from '../../FetchUser';
 import DynamicButton from '../DynamicButton';
-import { isAdminOrCreator } from '../../config';
+import { auditStatus } from '../../config';
 
 const style= {
     marginBottom: '10px',
@@ -48,9 +48,25 @@ class ListDepartments extends Component {
                         <TextField source="name" label="单位名称" />
                         <ChipField source="zyfzr.name" label="主要负责人" />
                         <ChipField source="bmscy.name" label="保密审查员" />
+                        <FunctionField label="审核状态"
+                            render={record => {
+                                if (!record.latestAuditLog) record.latestAuditLog = {
+                                status: auditStatus.CREATED,
+                                };
+                                switch (record.latestAuditLog.status) {
+                                case auditStatus.CREATED:
+                                    return '未提交审核';
+                                case auditStatus.SYDW_APPROVED:
+                                    return '已提交审核'
+                                case auditStatus.ITC_APPROVED:
+                                    return '信息技术中心已审核通过';
+                                case auditStatus.ITC_REJECTED:
+                                    return `信息技术中心审核未通过（原因：${record.latestAuditLog.remark}）`
+                                }
+                                return '';
+                            }}
+                            />
                         <ShowButton />
-                        <DynamicButton show={isAdminOrCreator.bind(this, user)}  button={<DeleteButton />} />
-                        <DynamicButton show={isAdminOrCreator.bind(this, user)}  button={<EditButton />} />
                     </Datagrid>
                 </List>
             </div>
