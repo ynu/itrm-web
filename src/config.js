@@ -7,9 +7,9 @@ export const roles = {
   supervisor: process.env.REACT_APP_ROLES_SUPERVISOR || 'itrm:supervisor',
 };
 
-export const isAdmin = (roles) => roles.includes(roles.admin);
+export const isAdmin = (userRoles) => userRoles.includes(roles.admin);
 
-export const isSupervisor = (roles) => (isAdmin(roles) || roles.includes(roles.supervisor));
+export const isSupervisor = (userRoles) => (isAdmin(userRoles) || userRoles.includes(roles.supervisor));
 
 export const isAdminOrCreator = (user, record) => {
   try {
