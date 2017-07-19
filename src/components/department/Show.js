@@ -27,7 +27,7 @@ class ShowActions extends Component {
         <DynamicButton {...this.props} show={showApproveButton} record={data} button={<ApproveButton/>} />  
         <DynamicButton {...this.props} show={showRejectButton} record={data} button={<RejectButton/>} />  
         <EditButton {...this.props} record={data} />
-        <DeleteButton {...this.props} />
+        <DeleteButton {...this.props} record={data}/>
         <RefreshButton {...this.props} />
     </CardActions>
     );
@@ -52,7 +52,7 @@ class ShowDepartment extends Component {
       record={this.props.data}
       showCommitButton={record => {
         try {
-          /* console.log(isAdmin(user.roles), isCreator(user, record), auditStatus.isCreated(record)) */
+          console.log(isAdmin(user.roles), isCreator(user, record), auditStatus.isCreated(record));
           return (isAdmin(user.roles) || isCreator(user, record)) && auditStatus.isCreated(record);
         } catch (error) {
           return false;
