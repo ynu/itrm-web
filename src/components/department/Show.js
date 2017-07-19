@@ -5,7 +5,7 @@ import { Show, SimpleShowLayout, RefreshButton, DeleteButton, TextField, Functio
 import DynamicButton from '../DynamicButton';
 import { WithdrawButton, CommitButton, ApproveButton, RejectButton } from '../buttons';
 import FetchUser from '../../FetchUser';
-import { auditStatus } from '../../config';
+import { auditStatus, isAdmin } from '../../config';
 
 const Title = ({ record }) => {
   return <span>使用单位： {record ? record.name : ''}</span>;
@@ -50,13 +50,13 @@ class ShowDepartment extends Component {
       record={this.props.data}
       showCommitButton={record => {
         try {
-          return isCreator(user, record) && auditStatus.isCreated(record);
+          return (isAdmin(user.roles) || isCreator(user, record)) && auditStatus.isCreated(record);
         } catch (error) {
           return false;
         }
       }}
-      showWithDrawButton={record =>isCreator(user, record) && auditStatus.isSydwApproved(record)}
-      showApproveButton={record => isCreator(user, record) && auditStatus.isSydwApproved(record)}
+      showWithDrawButton={record =>(isAdmin(user.roles) || isCreator(user, record)) && auditStatus.isSydwApproved(record)}
+      showApproveButton={record => (isAdmin(user.roles) || isCreator(user, record)) && auditStatus.isSydwApproved(record)}
       showRejectButton={record => isCreator(user, record) && (
         auditStatus.isSydwApproved(record) || auditStatus.isItcApproved(record)
       )}
