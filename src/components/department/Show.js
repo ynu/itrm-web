@@ -45,13 +45,14 @@ class ShowDepartment extends Component {
       }
     }
     const { user } = this.props;
-    if (!user || !user.roles) return null;
+    // if (!user || !user.roles) return null;
     
     const actions = <ShowActions
       {...this.props}
       record={this.props.data}
       showCommitButton={record => {
         try {
+          /* console.log(isAdmin(user.roles), isCreator(user, record), auditStatus.isCreated(record)) */
           return (isAdmin(user.roles) || isCreator(user, record)) && auditStatus.isCreated(record);
         } catch (error) {
           return false;
