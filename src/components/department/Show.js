@@ -45,6 +45,8 @@ class ShowDepartment extends Component {
       }
     }
     const { user } = this.props;
+    if (!user || !user.roles) return null;
+    
     const actions = <ShowActions
       {...this.props}
       record={this.props.data}
