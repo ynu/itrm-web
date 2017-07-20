@@ -18,7 +18,7 @@ const cardActionStyle = {
 };
 class ShowActions extends Component {
   render() {
-    const { showCommitButton, showWithDrawButton, showApproveButton, showRejectButton, user, data } = this.props;
+    const { showCommitButton, showWithDrawButton, showApproveButton, showEditButton, showDeleteButton, showRejectButton, user, data } = this.props;
     if (!user || !data) return null;
     return (
       <CardActions style={cardActionStyle}>
@@ -26,8 +26,8 @@ class ShowActions extends Component {
         <DynamicButton {...this.props} show={showWithDrawButton} record={data} button={<WithdrawButton/>} />  
         <DynamicButton {...this.props} show={showApproveButton} record={data} button={<ApproveButton/>} />  
         <DynamicButton {...this.props} show={showRejectButton} record={data} button={<RejectButton/>} />  
-        <EditButton {...this.props} record={data} />
-        <DeleteButton {...this.props} record={data}/>
+        <DynamicButton {...this.props} show={showEditButton} record={data} button={<EditButton />} />
+        <DynamicButton {...this.props} show={showDeleteButton} record={data} button={<DeleteButton />} />
         <RefreshButton {...this.props} />
     </CardActions>
     );
@@ -52,7 +52,6 @@ class ShowDepartment extends Component {
       record={this.props.data}
       showCommitButton={record => {
         try {
-          console.log(isAdmin(user.roles), isCreator(user, record), auditStatus.isCreated(record));
           return (isAdmin(user.roles) || isCreator(user, record)) && auditStatus.isCreated(record);
         } catch (error) {
           return false;
@@ -60,9 +59,21 @@ class ShowDepartment extends Component {
       }}
       showWithDrawButton={record =>(isAdmin(user.roles) || isCreator(user, record)) && auditStatus.isSydwApproved(record)}
       showApproveButton={record => (isAdmin(user.roles) || isCreator(user, record)) && auditStatus.isSydwApproved(record)}
-      showRejectButton={record => isCreator(user, record) && (
+      showRejectButton={record => isAdmin(user.roles) && (
         auditStatus.isSydwApproved(record) || auditStatus.isItcApproved(record)
       )}
+      showEditButton={record => {
+        if (isAdmin(user.roles) || isCreator(user, record)){
+          return !auditStatus.isSydwApproved(record) && !auditStatus.isItcApproved(record);
+        }
+        return false;
+      }}
+      showDeleteButton={record => {
+        if (isAdmin(user.roles) || isCreator(user, record)){
+          return auditStatus.isCreated(record);
+        }
+        return false;
+      }}
     />
     return (
       <div>
