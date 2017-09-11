@@ -9,7 +9,7 @@ import { apiHost } from '../../config';
 class WithdrawButton extends Component {
     handleClick = () => {
         const { basePath, resource, crudGetOne, record, showNotification } = this.props;
-        fetch(`${apiHost}${basePath}/withdraw/${record.id}`, { method: 'PUT', credentials: 'include' })
+        fetch(`${apiHost}/audit/withdraw${basePath}/${record.id}`, { method: 'POST', credentials: 'include' })
             .then(() => {
                 showNotification('撤回成功');
                 crudGetOne(resource, record.id, basePath);

@@ -101,7 +101,7 @@ class ShowDepartment extends Component {
                   case auditStatus.ITC_APPROVED:
                     return '信息技术中心已审核通过';
                   case auditStatus.ITC_REJECTED:
-                    return `信息技术中心审核未通过（原因：${record.latestAuditLog.remark}）`
+                    return `信息技术中心审核未通过（原因：${record.latestAuditLog.remark}），请重新编辑后再提交审核。`
                 }
                 return '';
               }}

@@ -9,7 +9,7 @@ import { apiHost } from '../../config';
 class ApproveButton extends Component {
     handleClick = () => {
         const { basePath, resource, crudGetOne, record, showNotification } = this.props;
-        fetch(`${apiHost}${basePath}/itc-approve/${record.id}`, { method: 'PUT', credentials: 'include' })
+        fetch(`${apiHost}/audit/itc-approve${basePath}/${record.id}`, { method: 'POST', credentials: 'include' })
             .then(() => {
                 showNotification('审核成功');
                 crudGetOne(resource, record.id, basePath);

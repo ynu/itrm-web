@@ -9,7 +9,7 @@ import { apiHost } from '../../config';
 class CommitButton extends Component {
     handleClick = () => {
         const { basePath, resource, crudGetOne, record, showNotification } = this.props;
-        fetch(`${apiHost}${basePath}/commit/${record.id}`, { method: 'PUT', credentials: 'include' })
+        fetch(`${apiHost}/audit/commit${basePath}/${record.id}`, { method: 'POST', credentials: 'include' })
             .then(() => {
                 showNotification('提交成功');
                 crudGetOne(resource, record.id, basePath);

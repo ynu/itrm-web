@@ -18,8 +18,8 @@ class RejectButton extends Component {
     handleClick = () => {
         const { basePath, resource, crudGetOne, record, showNotification } = this.props;
         const { remark } = this.state;
-        fetch(`${apiHost}${basePath}/itc-reject/${record.id}`, {
-            method: 'PUT',
+        fetch(`${apiHost}/audit/itc-reject${basePath}/${record.id}`, {
+            method: 'POST',
             credentials: 'include',
             headers: {
                 'Content-Type': 'application/json',
