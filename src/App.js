@@ -38,7 +38,7 @@ const App = () => (
       />
         <Resource name="websites" options={{ label: '网站及应用系统' }}
           icon={WebsiteIcon}
-          list={WebSite.List} create={WebSite.Create} remove={Delete} edit={RedirectToList}
+          list={WebSite.List} create={WebSite.Create} remove={Delete} edit={WebSite.Edit}
           show={WebSite.Show}
         />
 

@@ -83,7 +83,11 @@ class ShowWebsite extends Component {
             <TextField source="domain" label="域名" />
             <TextField source="dept.name" label="主管单位" />
             <FunctionField label="管理员"
-              render={record => `${record.manager.name}(教工号：${record.manager.id}，手机号：${record.manager.phone})`} />
+              render={record => {
+                // 在编辑之后调转到show页面时，第一次render，record只有一个id字段，其他都没有
+                if (!record.manager) return null;
+                return `${record.manager.name}(教工号：${record.manager.id}，手机号：${record.manager.phone})`
+                }} />
             <FunctionField label="审核状态"
               render={record => {
                 if (!record.latestAuditLog) record.latestAuditLog = {

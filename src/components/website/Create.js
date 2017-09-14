@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { Create, regex, DisabledInput, NumberInput, required, BooleanInput, LongTextInput, ReferenceInput, SelectInput, SimpleForm, TextInput, TabbedForm, FormTab, DateInput  } from 'admin-on-rest';
+import { Create, regex, required, BooleanInput, LongTextInput, ReferenceInput, SelectInput, TextInput, TabbedForm, FormTab, DateInput  } from 'admin-on-rest';
 import { connect } from 'react-redux';
 import { change, formValueSelector } from 'redux-form';
-import SelectOrDefaultInput from '../SelectOrDefaultInput';
 import FetchUser from '../../FetchUser';
 
 const urlRegex = regex(
