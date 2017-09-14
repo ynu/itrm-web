@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { List, Datagrid, TextField, Filter, ChipField, ShowButton, ReferenceField, ReferenceArrayField, EditButton, DeleteButton, FunctionField } from 'admin-on-rest';
+import { List, Datagrid, TextField, Filter, ChipField, ShowButton,
+  TextInput, FunctionField, SelectInput } from 'admin-on-rest';
 import { connect } from 'react-redux';
 import { Card, CardHeader, CardActions, CardText } from 'material-ui/Card';
 import Avatar from 'material-ui/Avatar';
@@ -15,6 +16,18 @@ import { auditStatus } from '../../config';
 const style = {
   marginBottom: '10px',
 }
+
+const DeptFilter = (props) => (
+  <Filter {...props}>
+      <TextInput label="单位名称" source="q" />
+      <SelectInput source="latestAuditLog.status" label="审核状态" choices={[
+        { id: auditStatus.CREATED, name: '未提交审核' },
+        { id: auditStatus.SYDW_APPROVED, name: '已提交审核' },
+        { id: auditStatus.ITC_REJECTED, name: '审核未通过' },
+        { id: auditStatus.ITC_APPROVED, name: '已审核通过' },
+      ]} />
+  </Filter>
+);
 
 class Welcome extends Component {
   state = {}
@@ -46,7 +59,7 @@ class ListDepartments extends Component {
       <div>
         <FetchUser />
         <Welcome />
-        <List {...this.props} title="使用单位" >
+        <List {...this.props} title="使用单位" filters={<DeptFilter />}>
           <Datagrid>
             <TextField source="name" label="单位名称" />
             <ChipField source="zyfzr.name" label="主要负责人" />
