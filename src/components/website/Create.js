@@ -12,11 +12,11 @@ class WebsiteCreate extends Component {
     state = {  }
     
     render() {
-        const { tgfs, engVersion, mainPageUrl, user } = this.props;
-        const isYnuDomain = mainPageUrl.includes('ynu.edu.cn');
+        const { tgfs, engVersion, mainPageUrl, user, manager } = this.props;
+        const isYnuDomain = mainPageUrl && mainPageUrl.includes('ynu.edu.cn');
         if (user) {
-            this.props.change('record-form', 'manager.id', user.id);
-            this.props.change('record-form', 'manager.name', user.name);
+            if (!manager || !manager.id) this.props.change('record-form', 'manager.id', user.id);
+            if (!manager || !manager.name) this.props.change('record-form', 'manager.name', user.name);
         }
         return (
             <div>
@@ -34,7 +34,7 @@ class WebsiteCreate extends Component {
                                 <SelectInput optionText="name" />
                             </ReferenceInput>
                             <DateInput source="kbrq" label="开办日期" validate={[ required ]} />
-                            { mainPageUrl && !isYnuDomain && <TextInput source="icp" label="ICP备案号" defaultValue="滇ICP备05004791" validate={[ required ]} /> }
+                            { !isYnuDomain && <TextInput source="icp" label="ICP备案号" validate={[ required ]} /> }
                             <LongTextInput source="yt" label="用途" validate={[ required ]} />
                         </FormTab>
                         <FormTab label="管理员">
@@ -73,6 +73,7 @@ const mapStateToProps = state => ({
   mainPageUrl: selector(state, 'mainPageUrl') || '',
   tgfs: selector(state, 'providerInfo.tgfs'),
   engVersion: selector(state, 'hasEnglishVersion'),
+  manager: selector(state, 'manager'),
   user: state.user,
 });
 export default connect(mapStateToProps, {
