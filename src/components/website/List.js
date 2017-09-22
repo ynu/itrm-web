@@ -5,7 +5,7 @@ import FlatButton from 'material-ui/FlatButton';
 import { auditStatus } from '../../config';
 
 const urlRender = ({mainPageUrl, name}) =>
-    <FlatButton href={mainPageUrl} label={name}
+    <FlatButton href={mainPageUrl} label={name} target="_blank"
         labelStyle={{ textTransform: '' }}
     />;
 
