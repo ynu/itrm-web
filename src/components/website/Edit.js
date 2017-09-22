@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Edit, regex, required, BooleanInput, LongTextInput, ReferenceInput, SelectInput, TextInput, TabbedForm, FormTab, DateInput  } from 'admin-on-rest';
 import { connect } from 'react-redux';
-import { change, formValueSelector } from 'redux-form';
+import { formValueSelector } from 'redux-form';
 import FetchUser from '../../FetchUser';
 
 const urlRegex = regex(
@@ -13,14 +13,14 @@ class WebsiteEdit extends Component {
     
     render() {
         const { tgfs, engVersion, mainPageUrl } = this.props;
-        const isYnuDomain = mainPageUrl.includes('ynu.edu.cn');
+        const isYnuDomain = mainPageUrl && mainPageUrl.includes('ynu.edu.cn');
         return (
             <div>
                 <Edit {...this.props} title="添加网站或应用系统" >
                     <TabbedForm redirect="show" >
                         <FormTab label="基本信息">
                             <TextInput source="name" label="网站名称" validate={[ required ]} />
-                            <TextInput source="mainPageUrl" label="首页地址" validate={[ required ]} />
+                            <TextInput source="mainPageUrl" label="首页地址" validate={[ required, urlRegex ]} />
                             <SelectInput source="category" label="类型" choices={[
                                 { id: 1, name: '门户网站' },
                                 { id: 2, name: '应用系统' },
@@ -31,7 +31,7 @@ class WebsiteEdit extends Component {
                             <DateInput source="kbrq" label="开办日期" validate={[ required ]} />
                             {
                                 // 此处在没有的时候必须返回null,否则将在TabbedForm.js 的findTabsWithErrors报错
-                                (mainPageUrl && !isYnuDomain) ? <TextInput source="icp" label="ICP备案号" defaultValue="滇ICP备05004791" validate={[ required, urlRegex ]} /> : null
+                                (!isYnuDomain) ? <TextInput source="icp" label="ICP备案号" validate={[ required ]} /> : null
                             }
                             <LongTextInput source="yt" label="用途" validate={[ required ]} />
                         </FormTab>
@@ -73,6 +73,4 @@ const mapStateToProps = state => ({
   engVersion: selector(state, 'hasEnglishVersion'),
   user: state.user,
 });
-export default connect(mapStateToProps, {
-  change,
-})(WebsiteEdit);
+export default connect(mapStateToProps)(WebsiteEdit);
