@@ -12,19 +12,15 @@ class WebsiteEdit extends Component {
     state = {  }
     
     render() {
-        const { tgfs, engVersion, mainPageUrl, user } = this.props;
+        const { tgfs, engVersion, mainPageUrl } = this.props;
         const isYnuDomain = mainPageUrl.includes('ynu.edu.cn');
-        if (user) {
-            this.props.change('record-form', 'manager.id', user.id);
-            this.props.change('record-form', 'manager.name', user.name);
-        }
         return (
             <div>
                 <Edit {...this.props} title="添加网站或应用系统" >
                     <TabbedForm redirect="show" >
                         <FormTab label="基本信息">
                             <TextInput source="name" label="网站名称" validate={[ required ]} />
-                            <TextInput source="mainPageUrl" label="首页地址" validate={[ required, urlRegex ]} />
+                            <TextInput source="mainPageUrl" label="首页地址" validate={[ required ]} />
                             <SelectInput source="category" label="类型" choices={[
                                 { id: 1, name: '门户网站' },
                                 { id: 2, name: '应用系统' },
@@ -35,7 +31,7 @@ class WebsiteEdit extends Component {
                             <DateInput source="kbrq" label="开办日期" validate={[ required ]} />
                             {
                                 // 此处在没有的时候必须返回null,否则将在TabbedForm.js 的findTabsWithErrors报错
-                                (mainPageUrl && !isYnuDomain) ? <TextInput source="icp" label="ICP备案号" defaultValue="滇ICP备05004791" validate={[ required ]} /> : null
+                                (mainPageUrl && !isYnuDomain) ? <TextInput source="icp" label="ICP备案号" defaultValue="滇ICP备05004791" validate={[ required, urlRegex ]} /> : null
                             }
                             <LongTextInput source="yt" label="用途" validate={[ required ]} />
                         </FormTab>
