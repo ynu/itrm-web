@@ -33,7 +33,10 @@ class WebsiteEdit extends Component {
                                 <SelectInput optionText="name" />
                             </ReferenceInput>
                             <DateInput source="kbrq" label="开办日期" validate={[ required ]} />
-                            { mainPageUrl && !isYnuDomain && <TextInput source="icp" label="ICP备案号" defaultValue="滇ICP备05004791" validate={[ required ]} /> }
+                            {
+                                // 此处在没有的时候必须返回null,否则将在TabbedForm.js 的findTabsWithErrors报错
+                                (mainPageUrl && !isYnuDomain) ? <TextInput source="icp" label="ICP备案号" defaultValue="滇ICP备05004791" validate={[ required ]} /> : null
+                            }
                             <LongTextInput source="yt" label="用途" validate={[ required ]} />
                         </FormTab>
                         <FormTab label="管理员">

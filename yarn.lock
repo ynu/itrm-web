@@ -58,32 +58,30 @@ address@1.0.1, address@^1.0.1:
   version "1.0.1"
   resolved "http://registry.npm.taobao.org/address/download/address-1.0.1.tgz#363f5d3f2be26d0655d8afd5a9562e4fc2194537"
 
-admin-on-rest@^1.2.0:
-  version "1.2.0"
-  resolved "http://registry.npm.taobao.org/admin-on-rest/download/admin-on-rest-1.2.0.tgz#a62bdbf7ac3d0eeb743557ced3ef1e233d839ad5"
+admin-on-rest@^1.3.1:
+  version "1.3.1"
+  resolved "http://registry.npm.taobao.org/admin-on-rest/download/admin-on-rest-1.3.1.tgz#7729152b4d6251dfd520d18f7001037c4ec5f9c2"
   dependencies:
-    babel-runtime "~6.18.0"
+    babel-runtime "~6.26.0"
     inflection "~1.12.0"
     lodash.debounce "~4.0.8"
     lodash.defaultsdeep "~4.6.0"
     lodash.get "~4.4.2"
+    lodash.isequal "~4.5.0"
     lodash.set "~4.3.2"
-    material-ui "~0.17.4"
-    material-ui-chip-input "~0.13.5"
+    material-ui "~0.19.0"
+    material-ui-chip-input "~0.17.0"
     node-polyglot "2.2.2"
     prop-types "~15.5.7"
-    query-string "~4.3.2"
-    react "~15.5.4"
-    react-dom "~15.5.4"
-    react-dropzone "~3.13.1"
+    query-string "~5.0.0"
+    react-dropzone "~4.0.1"
     react-redux "~5.0.4"
     react-router "~4.1.0"
     react-router-dom "~4.1.0"
-    react-router-redux "~5.0.0-alpha.5"
-    react-tap-event-plugin "~2.0.1"
-    recompose "~0.23.1"
-    redux "~3.6.0"
-    redux-form "~6.6.3"
+    react-router-redux "~5.0.0-alpha.6"
+    recompose "~0.25.0"
+    redux "~3.7.2"
+    redux-form "~7.0.3"
     redux-saga "~0.15.0"
     reselect "~3.0.0"
 
@@ -953,12 +951,12 @@ babel-runtime@6.23.0, babel-runtime@^6.18.0, babel-runtime@^6.20.0, babel-runtim
     core-js "^2.4.0"
     regenerator-runtime "^0.10.0"
 
-babel-runtime@~6.18.0:
-  version "6.18.0"
-  resolved "http://registry.npm.taobao.org/babel-runtime/download/babel-runtime-6.18.0.tgz#0f4177ffd98492ef13b9f823e9994a02584c9078"
+babel-runtime@~6.26.0:
+  version "6.26.0"
+  resolved "http://registry.npm.taobao.org/babel-runtime/download/babel-runtime-6.26.0.tgz#965c7058668e82b55d7bfe04ff2337bc8b5647fe"
   dependencies:
     core-js "^2.4.0"
-    regenerator-runtime "^0.9.5"
+    regenerator-runtime "^0.11.0"
 
 babel-template@^6.16.0, babel-template@^6.24.1:
   version "6.25.0"
@@ -1776,6 +1774,10 @@ debug@2.6.8, debug@^2.1.1, debug@^2.2.0, debug@^2.6.0, debug@^2.6.3, debug@^2.6.
 decamelize@^1.0.0, decamelize@^1.1.1, decamelize@^1.1.2:
   version "1.2.0"
   resolved "http://registry.npm.taobao.org/decamelize/download/decamelize-1.2.0.tgz#f6534d15148269b20352e7bee26f501f9a191290"
+
+decode-uri-component@^0.2.0:
+  version "0.2.0"
+  resolved "http://registry.npm.taobao.org/decode-uri-component/download/decode-uri-component-0.2.0.tgz#eb3913333458775cb84cd1a1fae062106bb87545"
 
 deep-equal@^1.0.1, deep-equal@~1.0.1:
   version "1.0.1"
@@ -2850,6 +2852,10 @@ hoist-non-react-statics@^1.0.0, hoist-non-react-statics@^1.0.3, hoist-non-react-
   version "1.2.0"
   resolved "http://registry.npm.taobao.org/hoist-non-react-statics/download/hoist-non-react-statics-1.2.0.tgz#aa448cf0986d55cc40773b17174b7dd066cb7cfb"
 
+hoist-non-react-statics@^2.2.1:
+  version "2.3.1"
+  resolved "http://registry.npm.taobao.org/hoist-non-react-statics/download/hoist-non-react-statics-2.3.1.tgz#343db84c6018c650778898240135a1420ee22ce0"
+
 home-or-tmp@^2.0.0:
   version "2.0.0"
   resolved "http://registry.npm.taobao.org/home-or-tmp/download/home-or-tmp-2.0.0.tgz#e36c3f2d2cae7d746a857e38d18d5f32a7882db8"
@@ -3845,6 +3851,10 @@ lodash.get@~4.4.2:
   version "4.4.2"
   resolved "http://registry.npm.taobao.org/lodash.get/download/lodash.get-4.4.2.tgz#2d177f652fa31e939b4438d5341499dfa3825e99"
 
+lodash.isequal@~4.5.0:
+  version "4.5.0"
+  resolved "http://registry.npm.taobao.org/lodash.isequal/download/lodash.isequal-4.5.0.tgz#415c4478f2bcc30120c22ce10ed3226f7d3e18e0"
+
 lodash.memoize@^4.1.2:
   version "4.1.2"
   resolved "http://registry.npm.taobao.org/lodash.memoize/download/lodash.memoize-4.1.2.tgz#bcc6c49a42a2840ed997f323eada5ecd182e0bfe"
@@ -3928,9 +3938,9 @@ map-obj@^1.0.0, map-obj@^1.0.1:
   version "1.0.1"
   resolved "http://registry.npm.taobao.org/map-obj/download/map-obj-1.0.1.tgz#d933ceb9205d82bdcf4886f6742bdc2b4dea146d"
 
-material-ui-chip-input@~0.13.5:
-  version "0.13.6"
-  resolved "http://registry.npm.taobao.org/material-ui-chip-input/download/material-ui-chip-input-0.13.6.tgz#ca5f50c85da1f7a3e02532513f95cc471fd15d30"
+material-ui-chip-input@~0.17.0:
+  version "0.17.2"
+  resolved "http://registry.npm.taobao.org/material-ui-chip-input/download/material-ui-chip-input-0.17.2.tgz#4d1c065cad8d9b96ad6b0b3d3fa916fc27b66da8"
   dependencies:
     prop-types "^15.5.7"
 
@@ -3948,6 +3958,22 @@ material-ui@~0.17.4:
     react-addons-transition-group "^15.4.0"
     react-event-listener "^0.4.5"
     recompose "^0.23.0"
+    simple-assign "^0.1.0"
+    warning "^3.0.0"
+
+material-ui@~0.19.0:
+  version "0.19.2"
+  resolved "http://registry.npm.taobao.org/material-ui/download/material-ui-0.19.2.tgz#98c8898c933279b12df879d7184306aceb364cb5"
+  dependencies:
+    babel-runtime "^6.23.0"
+    inline-style-prefixer "^3.0.2"
+    keycode "^2.1.8"
+    lodash.merge "^4.6.0"
+    lodash.throttle "^4.1.1"
+    prop-types "^15.5.7"
+    react-event-listener "^0.4.5"
+    react-transition-group "^1.1.2"
+    recompose "0.24.0"
     simple-assign "^0.1.0"
     warning "^3.0.0"
 
@@ -4872,7 +4898,7 @@ promise@7.1.1, promise@^7.1.1:
   dependencies:
     asap "~2.0.3"
 
-prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.6, prop-types@^15.5.7, prop-types@~15.5.7:
+prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.6, prop-types@^15.5.7, prop-types@^15.5.9, prop-types@~15.5.7:
   version "15.5.10"
   resolved "http://registry.npm.taobao.org/prop-types/download/prop-types-15.5.10.tgz#2797dfc3126182e3a95e3dfbb2e893ddd7456154"
   dependencies:
@@ -4920,10 +4946,18 @@ qs@6.4.0, qs@~6.4.0:
   version "6.4.0"
   resolved "http://registry.npm.taobao.org/qs/download/qs-6.4.0.tgz#13e26d28ad6b0ffaa91312cd3bf708ed351e7233"
 
-query-string@^4.1.0, query-string@~4.3.2:
+query-string@^4.1.0:
   version "4.3.4"
   resolved "http://registry.npm.taobao.org/query-string/download/query-string-4.3.4.tgz#bbb693b9ca915c232515b228b1a02b609043dbeb"
   dependencies:
+    object-assign "^4.1.0"
+    strict-uri-encode "^1.0.0"
+
+query-string@~5.0.0:
+  version "5.0.0"
+  resolved "http://registry.npm.taobao.org/query-string/download/query-string-5.0.0.tgz#fbdf7004b4d2aff792f9871981b7a2794f555947"
+  dependencies:
+    decode-uri-component "^0.2.0"
     object-assign "^4.1.0"
     strict-uri-encode "^1.0.0"
 
@@ -5033,18 +5067,9 @@ react-dom@^15.6.1:
     object-assign "^4.1.0"
     prop-types "^15.5.10"
 
-react-dom@~15.5.4:
-  version "15.5.4"
-  resolved "http://registry.npm.taobao.org/react-dom/download/react-dom-15.5.4.tgz#ba0c28786fd52ed7e4f2135fe0288d462aef93da"
-  dependencies:
-    fbjs "^0.8.9"
-    loose-envify "^1.1.0"
-    object-assign "^4.1.0"
-    prop-types "~15.5.7"
-
-react-dropzone@~3.13.1:
-  version "3.13.3"
-  resolved "http://registry.npm.taobao.org/react-dropzone/download/react-dropzone-3.13.3.tgz#b8bde4b5a12842f85196b45e8cc2959834b81962"
+react-dropzone@~4.0.1:
+  version "4.0.1"
+  resolved "http://registry.npm.taobao.org/react-dropzone/download/react-dropzone-4.0.1.tgz#4d71d6f0fc5d7ac8a50dfa46582c96fe35ae3ca4"
   dependencies:
     attr-accept "^1.0.3"
     prop-types "^15.5.7"
@@ -5094,7 +5119,7 @@ react-router-redux@^4.0.8:
   version "4.0.8"
   resolved "http://registry.npm.taobao.org/react-router-redux/download/react-router-redux-4.0.8.tgz#227403596b5151e182377dab835b5d45f0f8054e"
 
-react-router-redux@~5.0.0-alpha.5:
+react-router-redux@~5.0.0-alpha.6:
   version "5.0.0-alpha.6"
   resolved "http://registry.npm.taobao.org/react-router-redux/download/react-router-redux-5.0.0-alpha.6.tgz#7418663c2ecd3c51be856fcf28f3d1deecc1a576"
   dependencies:
@@ -5163,7 +5188,7 @@ react-tap-event-plugin@~2.0.1:
   dependencies:
     fbjs "^0.8.6"
 
-react-transition-group@^1.2.0:
+react-transition-group@^1.1.2, react-transition-group@^1.2.0:
   version "1.2.0"
   resolved "http://registry.npm.taobao.org/react-transition-group/download/react-transition-group-1.2.0.tgz#b51fc921b0c3835a7ef7c571c79fc82c73e9204f"
   dependencies:
@@ -5190,15 +5215,6 @@ react@~15.4.0:
     fbjs "^0.8.4"
     loose-envify "^1.1.0"
     object-assign "^4.1.0"
-
-react@~15.5.4:
-  version "15.5.4"
-  resolved "http://registry.npm.taobao.org/react/download/react-15.5.4.tgz#fa83eb01506ab237cdc1c8c3b1cea8de012bf047"
-  dependencies:
-    fbjs "^0.8.9"
-    loose-envify "^1.1.0"
-    object-assign "^4.1.0"
-    prop-types "^15.5.7"
 
 read-all-stream@^3.0.0:
   version "3.1.0"
@@ -5266,9 +5282,27 @@ rechoir@^0.6.2:
   dependencies:
     resolve "^1.1.6"
 
-recompose@^0.23.0, recompose@~0.23.1:
+recompose@0.24.0:
+  version "0.24.0"
+  resolved "http://registry.npm.taobao.org/recompose/download/recompose-0.24.0.tgz#262e93f974439eb17e7779824d88cce90492a5dd"
+  dependencies:
+    change-emitter "^0.1.2"
+    fbjs "^0.8.1"
+    hoist-non-react-statics "^1.0.0"
+    symbol-observable "^1.0.4"
+
+recompose@^0.23.0:
   version "0.23.5"
   resolved "http://registry.npm.taobao.org/recompose/download/recompose-0.23.5.tgz#72ac8261246bec378235d187467d02a721e8b1de"
+  dependencies:
+    change-emitter "^0.1.2"
+    fbjs "^0.8.1"
+    hoist-non-react-statics "^1.0.0"
+    symbol-observable "^1.0.4"
+
+recompose@~0.25.0:
+  version "0.25.0"
+  resolved "http://registry.npm.taobao.org/recompose/download/recompose-0.25.0.tgz#e2ec723692ff0fdab3d62bd22c1da69af1985acd"
   dependencies:
     change-emitter "^0.1.2"
     fbjs "^0.8.1"
@@ -5302,7 +5336,7 @@ reduce-function-call@^1.0.1:
   dependencies:
     balanced-match "^0.4.2"
 
-redux-form@~6.6.2, redux-form@~6.6.3:
+redux-form@~6.6.2:
   version "6.6.3"
   resolved "http://registry.npm.taobao.org/redux-form/download/redux-form-6.6.3.tgz#62362654f2214c83a8f9fcb8313702bb46f92205"
   dependencies:
@@ -5315,6 +5349,19 @@ redux-form@~6.6.2, redux-form@~6.6.3:
     lodash-es "^4.17.3"
     prop-types "^15.5.6"
 
+redux-form@~7.0.3:
+  version "7.0.4"
+  resolved "http://registry.npm.taobao.org/redux-form/download/redux-form-7.0.4.tgz#2297b6bed40fda8bb58132e261ba0976fb4e530c"
+  dependencies:
+    deep-equal "^1.0.1"
+    es6-error "^4.0.0"
+    hoist-non-react-statics "^2.2.1"
+    invariant "^2.2.2"
+    is-promise "^2.1.0"
+    lodash "^4.17.3"
+    lodash-es "^4.17.3"
+    prop-types "^15.5.9"
+
 redux-saga@~0.14.6:
   version "0.14.8"
   resolved "http://registry.npm.taobao.org/redux-saga/download/redux-saga-0.14.8.tgz#ad01afabe02ec41a17df54e2e09aa236b30a7732"
@@ -5323,14 +5370,14 @@ redux-saga@~0.15.0:
   version "0.15.4"
   resolved "http://registry.npm.taobao.org/redux-saga/download/redux-saga-0.15.4.tgz#27982a947280053b7ecbb5d3170c837a5fe6b261"
 
-redux@~3.6.0:
-  version "3.6.0"
-  resolved "http://registry.npm.taobao.org/redux/download/redux-3.6.0.tgz#887c2b3d0b9bd86eca2be70571c27654c19e188d"
+redux@~3.7.2:
+  version "3.7.2"
+  resolved "http://registry.npm.taobao.org/redux/download/redux-3.7.2.tgz#06b73123215901d25d065be342eb026bc1c8537b"
   dependencies:
     lodash "^4.2.1"
     lodash-es "^4.2.1"
     loose-envify "^1.1.0"
-    symbol-observable "^1.0.2"
+    symbol-observable "^1.0.3"
 
 regenerate@^1.2.1:
   version "1.3.2"
@@ -5340,9 +5387,9 @@ regenerator-runtime@^0.10.0:
   version "0.10.5"
   resolved "http://registry.npm.taobao.org/regenerator-runtime/download/regenerator-runtime-0.10.5.tgz#336c3efc1220adcedda2c9fab67b5a7955a33658"
 
-regenerator-runtime@^0.9.5:
-  version "0.9.6"
-  resolved "http://registry.npm.taobao.org/regenerator-runtime/download/regenerator-runtime-0.9.6.tgz#d33eb95d0d2001a4be39659707c51b0cb71ce029"
+regenerator-runtime@^0.11.0:
+  version "0.11.0"
+  resolved "http://registry.npm.taobao.org/regenerator-runtime/download/regenerator-runtime-0.11.0.tgz#7e54fe5b5ccd5d6624ea6255c3473be090b802e1"
 
 regenerator-transform@0.9.11:
   version "0.9.11"
@@ -5987,7 +6034,7 @@ sw-toolbox@^3.4.0:
     path-to-regexp "^1.0.1"
     serviceworker-cache-polyfill "^4.0.0"
 
-symbol-observable@^1.0.2, symbol-observable@^1.0.4:
+symbol-observable@^1.0.3, symbol-observable@^1.0.4:
   version "1.0.4"
   resolved "http://registry.npm.taobao.org/symbol-observable/download/symbol-observable-1.0.4.tgz#29bf615d4aa7121bdd898b22d4b3f9bc4e2aa03d"
 
